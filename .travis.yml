@@ -22,4 +22,4 @@ script:
       secure: $HEROKU
     on:
       branch: master
-  #  app: iwvg-ecosystem, por defecto, nombre del artefacto
+    app: iwvg-ecosystem-maria-sanchez
