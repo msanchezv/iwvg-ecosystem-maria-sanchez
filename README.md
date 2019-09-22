@@ -1,6 +1,8 @@
 ## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)](http://miw.etsisi.upm.es)
-## Plantilla para la práctica de Ecosistema (IWVG-ecosystem)
-> Plantilla con Spring básico (API, test) 
+## Práctica de Ecosistema (IWVG-ecosystem)
+
+## Estado del código
+[![Build Status](https://travis-ci.org/msanchezv/iwvg-ecosystem-maria-sanchez.svg?branch=develop)](https://travis-ci.org/msanchezv/iwvg-ecosystem-maria-sanchez) 
 
 ## Ecosistema
 * Java
