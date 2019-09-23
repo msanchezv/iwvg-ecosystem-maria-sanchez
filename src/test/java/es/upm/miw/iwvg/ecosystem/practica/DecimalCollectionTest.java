@@ -1,40 +1,54 @@
 package es.upm.miw.iwvg.ecosystem.practica;
 
+import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class DecimalCollectionTest {
-    private User user;
+class DecimalCollectionTest {
+    private DecimalCollection decimalCollection;
 
     @BeforeEach
     void before() {
-        user = new User(1, "mateo", "sánchez");
+        this.decimalCollection = new DecimalCollection();
+        this.decimalCollection.add(2.0);
+        this.decimalCollection.add(-1.0);
+        this.decimalCollection.add(3.0);
+        this.decimalCollection.add(2.0);
     }
 
     @Test
-    void testFormat() {
-        assertEquals("Mateo Sánchez", user.fullName());
+    void testDecimalCollection() {
+        this.decimalCollection = new DecimalCollection();
+        assertEquals(0, this.decimalCollection.size());
     }
 
     @Test
-    void testInitials() {
-        assertEquals("M.", user.initials());
+    void testAdd() {
+        assertEquals(4, this.decimalCollection.size());
     }
 
     @Test
-    void testNumber() {
-        assertEquals(1, user.getNumber());
+    void testSum() {
+        assertEquals(6.0, this.decimalCollection.sum(), 10e-5);
     }
 
     @Test
-    void testName() {
-        assertEquals("Mateo", user.getName());
+    void testSumArithmeticExceptionIfEmpty() {
+        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> new DecimalCollection().sum());
+        LogManager.getLogger(this.getClass()).debug(exception.getMessage());
     }
 
     @Test
-    void testFamilyName() {
-        assertEquals("Sánchez", user.getFamilyName());
+    void testHigher() {
+        assertEquals(3.0, this.decimalCollection.higher(), 10e-5);
     }
+
+    @Test
+    void testHigherArithmeticExceptionIfEmpty() {
+        assertThrows(ArithmeticException.class, () -> new DecimalCollection().higher());
+    }
+
 }
