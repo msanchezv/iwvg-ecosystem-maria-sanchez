@@ -22,6 +22,10 @@ public class User {
         return this.name + " " + this.familyName;
     }
 
+    public String fullData() {
+        return this.name + " " + this.familyName + " you are " + this.number + " years old.";
+    }
+
     public String initials() {
         return this.name.substring(0, 1) + ".";
     }

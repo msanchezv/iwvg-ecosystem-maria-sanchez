@@ -42,4 +42,9 @@ public class UserTest {
     void testNameUpperCase() {
         assertEquals("MATEO", user.getNameUpperCase());
     }
+
+    @Test
+    void testFullData() {
+        assertEquals("Mateo Sánchez you are " + user.getNumber() + " years old.", user.fullData());
+    }
 }
