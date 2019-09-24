@@ -37,6 +37,17 @@ class PointTest {
     }
 
     @Test
+    void testSetPoint() {
+        point = new Point();
+        point.setX(12);
+        point.setY(13);
+        point.setZ(26);
+        assertEquals(12, point.getX());
+        assertEquals(13, point.getY());
+        assertEquals(26, point.getZ());
+    }
+
+    @Test
     void testModule() {
         assertEquals(5.3851, point.module(), 10e-5);
     }
