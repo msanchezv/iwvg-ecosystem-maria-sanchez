@@ -33,4 +33,14 @@ class FractionTest {
         assertEquals(1, fractionDefault.getDenominator());
     }
 
+    @Test
+    void testIsProper() {
+        assertEquals(true, fraction.isProper());
+    }
+
+    @Test
+    void testIsImproper() {
+        assertEquals(false, fraction.isImproper());
+    }
+
 }
