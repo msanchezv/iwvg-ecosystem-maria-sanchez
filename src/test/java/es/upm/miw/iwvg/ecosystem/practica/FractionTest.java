@@ -45,14 +45,20 @@ class FractionTest {
 
     @Test
     void testHigher() {
-        Fraction fraction2 = new Fraction(3,4);
+        Fraction fraction2 = new Fraction(3, 4);
         assertEquals(fraction2, fraction.higher(fraction2));
     }
 
     @Test
     void testLower() {
-        Fraction fraction2 = new Fraction(3,4);
+        Fraction fraction2 = new Fraction(3, 4);
         assertEquals(fraction, fraction.lower(fraction2));
+    }
+
+    @Test
+    void testIsEquivalent() {
+        Fraction fraction2 = new Fraction(3, 6);
+        assertEquals(true, fraction.isEquivalent(fraction2));
     }
 
 }
