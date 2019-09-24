@@ -53,4 +53,27 @@ public class Fraction {
         return denominator;
     }
 
+    public boolean isProper() {
+        return numerator < denominator;
+    }
+
+    public boolean isImproper() {
+        return numerator >= denominator;
+    }
+
+    public Fraction higher(Fraction f2) {
+        if (this.decimal() >= f2.decimal()) return this;
+        else return f2;
+    }
+
+    public Fraction lower(Fraction f2) {
+        if (this.decimal() <= f2.decimal()) return this;
+        else return f2;
+    }
+
+    public boolean isEquivalent(Fraction f2) {
+        if ((this.getNumerator() * f2.getDenominator()) == (this.getDenominator() * f2.getNumerator())) return true;
+        else return false;
+    }
+
 }
