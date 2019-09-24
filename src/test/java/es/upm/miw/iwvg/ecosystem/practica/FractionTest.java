@@ -35,30 +35,32 @@ class FractionTest {
 
     @Test
     void testIsProper() {
+        Fraction f2 = new Fraction(5, 2);
         assertEquals(true, fraction.isProper());
+        assertEquals(false, f2.isProper());
     }
 
     @Test
     void testIsImproper() {
+        Fraction f2 = new Fraction(5, 2);
         assertEquals(false, fraction.isImproper());
+        assertEquals(true, f2.isImproper());
     }
 
     @Test
     void testHigher() {
-        Fraction fraction2 = new Fraction(3, 4);
-        assertEquals(fraction2, fraction.higher(fraction2));
+        Fraction f2 = new Fraction(3, 4);
+        assertEquals(f2, fraction.higher(f2));
+        Fraction f3 = new Fraction(1, 2);
+        assertEquals(fraction, fraction.higher(f3));
     }
 
     @Test
     void testLower() {
-        Fraction fraction2 = new Fraction(3, 4);
-        assertEquals(fraction, fraction.lower(fraction2));
-    }
-
-    @Test
-    void testIsEquivalent() {
-        Fraction fraction2 = new Fraction(3, 6);
-        assertEquals(true, fraction.isEquivalent(fraction2));
+        Fraction f2 = new Fraction(3, 4);
+        assertEquals(fraction, fraction.lower(f2));
+        Fraction f3 = new Fraction(1, 3);
+        assertEquals(f3, fraction.lower(f3));
     }
 
 }
