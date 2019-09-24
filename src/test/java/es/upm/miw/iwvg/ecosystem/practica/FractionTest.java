@@ -43,4 +43,16 @@ class FractionTest {
         assertEquals(false, fraction.isImproper());
     }
 
+    @Test
+    void testHigher() {
+        Fraction fraction2 = new Fraction(3,4);
+        assertEquals(fraction2, fraction.higher(fraction2));
+    }
+
+    @Test
+    void testLower() {
+        Fraction fraction2 = new Fraction(3,4);
+        assertEquals(fraction, fraction.lower(fraction2));
+    }
+
 }

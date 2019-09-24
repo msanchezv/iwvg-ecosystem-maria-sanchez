@@ -61,4 +61,14 @@ public class Fraction {
         return numerator >= denominator;
     }
 
+    public Fraction higher(Fraction f2) {
+        if (this.decimal() >= f2.decimal()) return this;
+        else return f2;
+    }
+
+    public Fraction lower(Fraction f2) {
+        if (this.decimal() <= f2.decimal()) return this;
+        else return f2;
+    }
+
 }
